@@ -1,0 +1,33 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form #playerForm="ngForm" (ngSubmit)="addPlayer()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Name"
+                            [(ngModel)]="player.name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="age" placeholder="Age" [(ngModel)]="player.age">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="position" placeholder="Position"
+                            [(ngModel)]="player.position">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="number" placeholder="Number"
+                            [(ngModel)]="player.number">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control form-select" name="team" id="team" [(ngModel)]="player.team">
+                            <option style="color: black;" *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary py-3 px-5" value="Add Player">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
